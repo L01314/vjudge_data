@@ -1,33 +1,21 @@
-#include <stdio.h>
-int fact(int a,int b)
-{
-	int i,j,sum=0,flag=0,p=0;
-	for(i=a;i<=b;i++)
-	{
-		sum=0;
-		for(j=1;j<=i/2;j++)
-		{
-			if(i%j==0)
-				sum+=j;
-		}
-		if(sum==i&&sum!=1)
-		{
-			if(p==0)
-				printf("%d",i);  //这里是对格式有所要求
-			else
-				printf(" %d",i);
-			p++;
-			flag=1;
-		}
-	}
-	if(flag==0)
-		printf("None\n");
-}
-int main(void)
-{
-	int x,y;
-	scanf("%d %d",&x,&y);
-	fact(x,y);
-	return 0;
-}
-
+ #include<stdio.h>
+ int main()
+ {
+	 int n,m;
+	 int a[10000],b[10000],c[100000];
+	 scanf("%d",&n);
+	 for(int i=0;i<n;i++) scanf("%d",&a[i]);
+	 scanf("%d",&m);
+	 for(int i=0;i<m;i++) scanf("%d",&b[i]);
+	 int i=0,j=0,k=0;
+	 while(i<n&&j<m)
+	 {
+	if(a[i]<b[j]) c[k++]=a[i++];
+	else  c[k++]=b[j++];
+	 }
+	 while(i<n) c[k++]=a[i++];
+	 while(j<m) c[k++]=b[j++];
+	 
+	 for(int i=0;i<m+n;i++) printf("%d\n",c[i]);
+	 return 0;
+ }
