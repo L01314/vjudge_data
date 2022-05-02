@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<string.h>
 int main() {
-	char c1[210];
-	char c2[212];
-	int i1[210];
-	int i2[210];
+	char c1[1005];
+	char c2[1005];
+	int i1[1005];
+	int i2[1005];
 	scanf("%s", c1);
 	scanf("%s", c2);
 	memset(i1, 0, sizeof(i1));
@@ -35,6 +35,14 @@ int main() {
 		k--;
 
 	}
+	for ( i = k; i >= 0; i--) {
+		printf("%c", c1[i]);
+	}
+		printf(" + ");
+	for ( i = k; i >= 0; i--) {
+		printf("%c", c2[i]);
+	}
+	printf(" = ");
 	for ( i = k; i >= 0; i--) {
 		printf("%d", i1[i]);
 	}
